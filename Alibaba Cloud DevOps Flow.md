@@ -11,6 +11,7 @@
 <p>이러한  문제를  해결할  수  있는  프로세스의  혁신이  바로  DevOps이다. DevOps의  핵심  3요소(People, Process, Technology) 중  Technology(기술)의  영역, 즉  <strong>CI/CD의  구현이  필수가  되었다.</strong></p>
 <p>오늘  이  글에서  우리는  Alibaba Cloud의  DevOps 플랫폼인  <strong>FLOW</strong> 에  대해서  알아보도록  하겠다.</p>
 <h2 id="solution-overview">2. Solution Overview</h2>
+<p><img src="https://user-images.githubusercontent.com/34003729/130347804-f8325a20-c321-4545-8d0a-0f009f7ed732.png" alt="image"></p>
 <p><a href="https://www.alibabacloud.com/help/doc-detail/210075.htm?spm=a2c63.p38356.b99.3.34263e4frG6VGv"><strong>Alibaba Cloud DevOps Flow</strong></a>(이하 Flow)는  Alibaba Cloud에서  제공하는  DevOps SaaS 플랫폼이다. 비슷한  서비스를  제공하는  오픈소스로는  <a href="https://www.jenkins.io/">Jenkins</a>, <a href="https://www.atlassian.com/ko/software/bamboo">Bamboo</a>, <a href="https://argoproj.github.io/argo-cd/">ArgoCD</a> 등이  있다.</p>
 <p>기본적으로, 모든  CI/CD Step을  아래  캡쳐와  같이  GUI로  제공하고  있으며  특정한  스크립트  언어, 구체적인  사용법을  몰라도  쉽게  접근하고  사용할  수  있다.</p>
 <blockquote>
