@@ -5,7 +5,7 @@
 
 <h1 id="devsecops-series-1-alibaba-cloud의--security-플랫폼과--hashicorp의--terraform-vault-packer로--구현하는-secops">[DevSecOps Series 1] Alibaba Cloud의  Security 플랫폼과  HashiCorp의  Terraform, Vault, Packer로  구현하는 SecOps</h1>
 <blockquote>
-<p>본  데모  블로그는  Alibaba Cloud와  HashiCorp가  함께한  DevSecOps 웨비나를  준비하면서  작성했다. 웨비나와  블로그  작성에  도움을  주신  HashiCorp의  GS Lee에게  감사합니다.</p>
+<p>본  데모  블로그는  Alibaba Cloud와  HashiCorp가  함께한  DevSecOps 웨비나를  준비하면서  작성했습니다. 웨비나와  블로그  작성에  도움을  주신  HashiCorp의  GS Lee에게  감사합니다.</p>
 </blockquote>
 <h2 id="배경--설명">1. 배경  설명</h2>
 <p>현재  많은  기업들은  그들의  개발, 운영  프로세스를  최적화하기  위해  많은  노력을  하고  있다. 특히  그들은  개발, 운영  사이에서  끊임없는  프로세스를  만들어서  조직이  애플리케이션  서비스를  빠르고  안전하게  배포하는  것을  목표로  가지고  있다.</p>
