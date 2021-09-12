@@ -277,9 +277,8 @@ PasswordAuthentication no
 <p><img src="https://user-images.githubusercontent.com/34003729/132981964-1bb5a112-29d5-4e6c-bcb3-74c02bd74c15.png" alt="image"></p>
 <h3 id="waf-설정">4.15 WAF 설정</h3>
 <p>위에서  진행한  L4 방화벽  작업이  완료되면  Application 방화벽인  WAF 설정이  필요하다.</p>
-<p>**WAF(Web Application Firewall)**는  웹사이트와  앱  서비스를  보호하는  보안  이다.<br>
-WAF는  악성  트래픽을  식별하고  트래픽을  scrubbing  및  필터링한  다음  일반  트래픽을  웹  서버로  전달한다.<br>
-WAF는  공격으로부터  웹  서버를  보호하고  데이터와  비즈니스의  보안을  보장한다.</p>
+<p><strong>WAF</strong>(Web Application Firewall)는  웹사이트와  앱  서비스를  보호하는  보안  이다.<br>
+WAF는  악성  트래픽을  식별하고  트래픽을  scrubbing  및  필터링한  다음  일반  트래픽을  웹  서버로  전달한다. 또한 공격으로부터  웹  서버를  보호하고  데이터와  비즈니스의  보안을  보장한다.</p>
 <p>우리는  4.11에서  확인한  우리의  서비스를  위해  ‘<a href="http://meow.4zangnim.com">meow.4zangnim.com</a>’ 도메인을  사용할  것이다. 이  도메인을  위한  WAF 설정을  <em>WAF Console &gt; Asset Center &gt; Website Access &gt; Add Domain Name</em>에서  할  수  있다.</p>
 <p><img src="https://user-images.githubusercontent.com/34003729/132982344-5136f3e6-7541-4bae-84d4-a182483694ba.png" alt="image"></p>
 <ul>
@@ -292,12 +291,12 @@ WAF는  공격으로부터  웹  서버를  보호하고  데이터와  비즈�
 </ul>
 <p>이제, <em>Next</em>를  누르고  아래  설정  화면을  살펴본다.</p>
 <p><img src="https://user-images.githubusercontent.com/34003729/132982425-90c2207d-b670-4008-8f4c-e80c94e67778.png" alt="image"></p>
-<p>여기서  가장  중요한  부분은  바로  CNAME이다.<br>
-원래  아래와  같은  로직을  위해서  CNAME을  DNS에  추가해야  하는데  우리는  WAF 앞에  Anti-DDoS를  배치할  것이므로  해당  값을  노트해  놓는다.</p>
+<p>여기서  가장  중요한  부분은  바로  CNAME이다.</p>
+<p>원래  아래와  같은  로직을  위해서  CNAME을  DNS에  추가해야  하지만,  우리는  WAF 앞에  Anti-DDoS를  배치할  것이므로  해당  값을  노트만해  놓는다.</p>
 <p><img src="https://user-images.githubusercontent.com/34003729/132982460-0d833535-5d0d-47eb-b1cb-3e49ad73f752.png" alt="image"></p>
 <h3 id="anti-ddos-설정">4.16 Anti-DDoS 설정</h3>
 <p>마지막으로, 우리의  애플리케이션을  DDoS로  부터  방어하기  위해  Anti-DDoS 설정을  이번  단계에서  수행한다.</p>
-<p><strong>Anti-DDoS</strong>는 DDoS 공격을  완화하기  위해 Alibaba Cloud에서  제공하는  프록시  기반  완화  서비스이다. 이러한  서비스는  볼륨 Metric DDoS 공격으로부터  네트워크  서버를  보호하는  데  사용할  수  있다. 볼륨  및  리소스  고갈 DDoS 공격으로부터  서버를  보호하기  위해 Anti-DDoS는 DNS 확인을  사용하여  트래픽을 Alibaba Cloud Anti-DDoS 네트워크로  전달한다.</p>
+<p><strong>Anti-DDoS</strong>는 DDoS 공격을  완화하기  위해 Alibaba Cloud에서  제공하는  프록시  기반  완화  서비스이다. 이러한  서비스는  볼륨 Metric DDoS 공격으로부터  네트워크  서버를  보호하는  데  사용할  수  있다.</p>
 <p><em>Anti-DDoS Console &gt; Website Config &gt; Add Domain</em>에서 DDoS 보호를 설정할 수 있다.</p>
 <p><img src="https://user-images.githubusercontent.com/34003729/132982507-f8a98f1b-39d3-479b-b1a3-068fe7186fc2.png" alt="image"></p>
 <ul>
@@ -316,7 +315,7 @@ WAF는  공격으로부터  웹  서버를  보호하고  데이터와  비즈�
 <ul>
 <li><em>Type</em> : CNAME 선택</li>
 <li><em>Host</em> : 보호할  도메인인  <a href="http://meow.4zangnim.com">meow.4zangnim.com</a> 입력</li>
-<li><em>Value</em> : Anti-DDoS에서  마지막에  도출된  CNAME 입력</li>
+<li><em>Value</em> : Anti-DDoS에서  <strong>마지막에  도출된  CNAME 입력</strong></li>
 </ul>
 <p>설정이  완료되었다면  <em>Confirm</em>을  눌러준다.</p>
 <h2 id="결과">5. 결과</h2>
@@ -344,4 +343,5 @@ WAF는  공격으로부터  웹  서버를  보호하고  데이터와  비즈�
 <a href="https://github.com/aliyun/terraform-provider-alicloud">https://github.com/aliyun/terraform-provider-alicloud</a></p>
 </blockquote>
 <p>다음  블로그에서는  DevSecOps 중, DevSec의  영역을  Alibaba Cloud X HashiCorp로  구현하는  데모에  대해서  소개할  것이다.</p>
+<p>끝.</p>
 
