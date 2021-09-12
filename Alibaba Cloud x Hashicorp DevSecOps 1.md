@@ -84,7 +84,8 @@
 <p><img src="https://user-images.githubusercontent.com/34003729/132978894-8c5dea5e-711d-4ab0-80f9-9c7410a8f7a6.png" alt="image"></p>
 <p><a href="https://github.com/alicloud-hashicorp/webinar/blob/main/202110/episode01/02_Vault/network.tf"><em>Github repo &gt; 02_Vault &gt; network.tf</em></a> 파일을  확인해보면  인스턴스를  배포할  VPC, Zone, vSwitch, Security group이  정의되어  있음을  확인할  수  있다.</p>
 <p><img src="https://user-images.githubusercontent.com/34003729/132978982-a9e39334-dbff-4fe1-9b44-6b6f788669f6.png" alt="image"></p>
-<p>우리는  Terraform Script를  실행한  후  나올  결과값을  정의할  수  있다. <a href="https://github.com/alicloud-hashicorp/webinar/blob/main/202110/episode01/02_Vault/output.tf"><em>Github repo &gt; 02_Vault &gt; output.tf</em></a> 파일을  확인해보면  terraform apply의  결과값으로  public ip, 랜덤하게  생성된 password, ssh 접속  경로를  확인할  수  있도록  정의되어있다.</p>
+<p>우리는  Terraform Script를  실행한  후  나올  결과값을  정의할  수  있다.<br>
+<a href="https://github.com/alicloud-hashicorp/webinar/blob/main/202110/episode01/02_Vault/output.tf"><em>Github repo &gt; 02_Vault &gt; output.tf</em></a> 파일을  확인해보면  terraform apply의  결과값으로  public ip, 랜덤하게  생성된 password, ssh 접속  경로를  확인할  수  있도록  정의되어있다.</p>
 <p><img src="https://user-images.githubusercontent.com/34003729/132979016-0103f32d-f4b3-4e63-9677-95bf87675f56.png" alt="image"></p>
 <h3 id="terraform을--이용한--vault-배포">4.4 Terraform을  이용한  Vault 배포</h3>
 <p>위의  단계에서  정의한  tf 파일들의  실행을  위해  아래  명령어를  입력한다.</p>
@@ -97,7 +98,8 @@
 </code></pre>
 <p><img src="https://user-images.githubusercontent.com/34003729/132979067-305303eb-bf8f-4076-b5d5-cc8fc0e1b458.png" alt="image"></p>
 <blockquote>
-<p>데모에서는  Vault를  Unseal하는  과정을  생략했다. 만약  Vault가  정상적으로  동작하지  않을  경우  Status를  확인하여  Unseal하는  작업을  진행해주면  된다.</p>
+<p>데모에서는  Vault를  Unseal하는  과정을  생략했다. 만약  Vault가  정상적으로  동작하지  않을  경우  Status를  확인하여  Unseal하는  작업을  진행해주면  된다.<br>
+그리고 Vault Console에 접속할 땐 8200 포트를 사용한다.</p>
 </blockquote>
 <h3 id="서비스가--배포될--ecs의--ssh연결을--강화할--otp-설정을-위한-파일-정의">4.5 서비스가  배포될  ECS의  SSH연결을  강화할  OTP 설정을 위한 파일 정의</h3>
 <h4 id="pam-설정">4.5.1 Pam 설정</h4>
