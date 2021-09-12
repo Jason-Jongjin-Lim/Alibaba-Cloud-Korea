@@ -11,19 +11,19 @@
 <p>본 블로그는 편의상 높임체를 사용하지 않았습니다.</p>
 </blockquote>
 <h2 id="배경--설명">1. 배경  설명</h2>
-<p>현재  많은  기업들은  그들의  개발, 운영  프로세스를  최적화하기  위해  많은  노력을  하고  있다. 특히  그들은  개발, 운영  사이에서  끊임없는  프로세스를  만들어서  조직이  애플리케이션  서비스를  빠르고  안전하게  배포하는  것을  목표로  가지고  있다.</p>
-<p>이러한  변화를  우리는  <strong>DevOps</strong>라고  이야기한다.</p>
-<p>하지만  최근에는  DevOps 프로세스를  구성하는  과정에서  보안  강화에  대한  부분이  강조되고  있다.</p>
-<p>기업은  모든  IT 개발과  운영  프로세스에서  개발, 배포, 테스트, 관리에  이르기까지  모두  보안을  고려해야한다. 이  것을  <strong>DevSecOps</strong>라고  말한다.</p>
+<p>현재  많은  기업들은  그들의  개발, 운영  프로세스를  최적화하기  위해  많은  노력을  하고  있다. 특히  그들은  개발, 운영  사이에서  끊임없는  프로세스를  만들어서  조직이  애플리케이션  서비스를  빠르고  안전하게  배포하는  것을  목표로  가지고  있다.<br>
+이러한  변화를  우리는  <strong>DevOps</strong>라고  이야기한다.</p>
+<p>하지만  최근에는  DevOps 프로세스를  구성하는  과정에서  보안  강화에  대한  부분이  강조되고  있다.<br>
+기업은  모든  IT 개발과  운영  프로세스에서  개발, 배포, 테스트, 관리에  이르기까지  모두  보안을  고려해야한다. 이  것을  <strong>DevSecOps</strong>라고  말한다.</p>
 <p>우리는  본  데모에서  Alibaba Cloud와  HashiCorp의  서비스로  인프라부터  네트워크까지  이어지는  DevSecOps를  구현하는  방법에  대해서  배워볼  것이다.</p>
 <h2 id="solution-overview">2. Solution Overview</h2>
 <p>데모  환경은  Alibaba Cloud의  싱가포르  리전을  사용하며  아래와  같은  아키텍쳐를  가지고  있다.</p>
-<p>먼저  HashiCorp의  Terraform을  이용해서  Alibaba Cloud의  서비스  자동화를  위한  Provider 설정을  한다. 그  이후  Terraform을  이용해  Vault를  배포한다. Vault는  배포될  인스턴스에서  사용할  SSH를  위한  OTP 생성을  담당한다.</p>
-<p>그  이후, Packer를  이용해  ECS를  배포할  때  사용할  골든  이미지를  패킹한다. 그리고  만들어진  골든  이미지를  통해  ECS, SLB를  배포할  것이다.</p>
+<p>먼저  HashiCorp의  <strong>Terraform</strong>을  이용해서  Alibaba Cloud의  서비스  자동화를  위한  Provider 설정을  한다. 그  이후  Terraform을  이용해  <strong>Vault</strong>를  배포한다. Vault는  배포될  인스턴스에서  사용할  SSH를  위한  OTP 생성을  담당한다.</p>
+<p>그  이후, <strong>Packer</strong>를  이용해  ECS를  배포할  때  사용할  골든이미지를  만든다. 그리고  만들어진  골든이미지를  통해  ECS, SLB를  배포할  것이다.</p>
 <p><img src="https://user-images.githubusercontent.com/34003729/132978133-aa5ab7d9-6e50-47a0-a057-a6b2974fc648.png" alt="image"></p>
 <p>골든이미지로  만들어진  서비스의  네트워크  보안을  강화하기  위해  Alibaba Cloud의  4가지  보안 서비스를  사용할  것이다.</p>
-<p>먼저, Security Center로  구성된  Asset에  대한  보안을  관리한다.</p>
-<p>그  이후, 우리는  Cloud Firewall, WAF, Anti-DDoS를  차례대로  연결하며  풀스택  보안을  구현할  것이다.</p>
+<p>먼저, <strong>Security Center</strong>로  구성된  Asset에  대한  보안을  관리한다.<br>
+그  이후, 우리는  <strong>Cloud Firewall, WAF, Anti-DDoS</strong>를  차례대로  연결하며  풀스택  보안을  구현할  것이다.</p>
 <p><img src="https://user-images.githubusercontent.com/34003729/132978180-28168bed-84c0-4ff8-8bdb-208ff499ec9d.png" alt="image"></p>
 <h2 id="사전--조건">3. 사전  조건</h2>
 <p><strong>[Alibaba Cloud]</strong></p>
@@ -39,23 +39,23 @@
 <li><a href="https://www.vaultproject.io/docs/secrets/alicloud">Vault</a></li>
 <li><a href="https://www.packer.io/docs/builders/alicloud">Packer</a></li>
 </ul>
-<p>구성에  사용할  모든  스크립트와  소스코드는  아래  GitHub Repo에서  참조할  수  있다.</p>
-<p><a href="https://github.com/alicloud-hashicorp/webinar/tree/main/202110/episode01">https://github.com/alicloud-hashicorp/webinar/tree/main/202110/episode01</a></p>
+<p>구성에  사용할  모든  스크립트와  소스코드는  아래  GitHub Repository에서  참조할  수  있다.<br>
+<a href="https://github.com/alicloud-hashicorp/webinar/tree/main/202110/episode01">https://github.com/alicloud-hashicorp/webinar/tree/main/202110/episode01</a></p>
 <h2 id="main-steps">4. Main Steps</h2>
 <h3 id="terraform-registry에서--alibaba-cloud-provider-살펴보기">4.1 Terraform Registry에서  Alibaba Cloud Provider 살펴보기</h3>
-<p><strong>Terraform</strong>은 HashiCorp에서  제공하는  IaC(Infrastructure as Code)를  구현할  수  있는  자동화  플랫폼이다. 이번  데모에서는  Terraform의  Opensource 버전이  아닌  Enterprise 버전을  사용할  것이다.</p>
+<p><strong>Terraform</strong>은 HashiCorp에서  제공하는  IaC (Infrastructure as Code)를  구현할  수  있는  자동화  플랫폼이다. 이번  데모에서는  Terraform의  Opensource 버전이  아닌  Enterprise 버전을  사용할  것이다.</p>
 <p>먼저  Terraform을  사용하기에  앞서, Provider에  대해서  이해할  필요가  있다. Provider는  Terraform으로  연결을  만드는  메커니즘으로  Terraform registry에서  각  CSP에  대한  사용법을  친절하게  게시해  놓았다.</p>
 <p><a href="https://registry.terraform.io">Terraform Registry</a> 에  접속하면  아래와  같은  화면을  볼  수  있다.</p>
 <p><img src="https://user-images.githubusercontent.com/34003729/132978292-02bdebcd-73b6-4e10-91a8-ac98e131e9a2.png" alt="image"></p>
 <p>페이지에서  Alibaba Cloud 항목을  클릭하면 Alibaba Cloud에서  제공하는  각  서비스와의  연결을  위한  메뉴얼을  확인할  수  있다.</p>
 <p><img src="https://user-images.githubusercontent.com/34003729/132978316-f664f48c-f94d-458c-9dcf-1d4459fb35f1.png" alt="image"></p>
-<p>Argument reference는  예시  기반으로  상세한  사용  방법이  적혀있다. Terraform을  처음  접하는  사람이라도  쉽게  사용할  수  있다.</p>
+<p><em>Argument reference</em>는  예시  기반으로  상세한  사용  방법이  적혀있다. 이 메뉴얼을 참조한다면 Terraform을  처음  접하는  사람이라도  쉽게  사용할  수  있다.</p>
 <p><img src="https://user-images.githubusercontent.com/34003729/132978355-4112a668-67ef-4f55-ba90-d77a3e87a0dd.png" alt="image"></p>
 <h3 id="terraform과--alibaba-cloud-연결하기">4.2 Terraform과  Alibaba Cloud 연결하기</h3>
 <p>Terraform을  통해서  Alibaba Cloud의  서비스를  관리하기  위해서는  첫번째로  credential 설정이  필요하다.</p>
 <p>Credential은  총  <a href="https://registry.terraform.io/providers/aliyun/alicloud/latest/docs#authentication">4가지  방법</a>으로  설정할  수  있지만  본  데모에서는  Access/Secret Key를  이용한  Static credential을  사용할  것이다.</p>
 <p><img src="https://user-images.githubusercontent.com/34003729/132978403-61eafad2-c9fc-4ac6-90b3-203a6a1e0c2c.png" alt="image"></p>
-<p>Static credential을  사용하기  위해  우리는  Alibaba Cloud의  AccessKey Pair를  발급받을  필요가  있다. Alibaba Cloud Console의  우측  상단  Profile에서  AccessKey Pair를  발급받을  수  있다.</p>
+<p>Static credential을  사용하기  위해  우리는  Alibaba Cloud의  AccessKey Pair를  발급받을  필요가  있다. Alibaba Cloud Console의  우측  상단  <em>Profile</em>에서  AccessKey Pair를  발급받을  수  있다.</p>
 <p><img src="https://user-images.githubusercontent.com/34003729/132978431-21f5e90d-413f-424c-ba99-00c05db4348b.png" alt="image"></p>
 <blockquote>
 <p>나중에  AccessKey를  사용해야하기  때문에  Enabled된  Key를  노트해두자</p>
@@ -78,7 +78,7 @@
 <p>인스턴스  Provisioning을  위해  아래  링크를  참조할  수  있다.<br>
 <a href="https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/auto_provisioning_group">https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/auto_provisioning_group</a></p>
 </blockquote>
-<p><a href="https://github.com/alicloud-hashicorp/webinar/blob/main/202110/episode01/02_Vault/ecs_vault.tf"><em>Github repo &gt; 02_Vault &gt; ecs_vault.tf</em></a> 에는  Vault를  배포할  인스턴스에  대해  정의한다. 이  환경에서는  Unbuntu 이미지를  사용하며  보안  강화를  위해  랜덤한  비밀번호를  생성하여  접속할  수  있도록  만들었다.</p>
+<p><a href="https://github.com/alicloud-hashicorp/webinar/blob/main/202110/episode01/02_Vault/ecs_vault.tf"><em>Github repo &gt; 02_Vault &gt; ecs_vault.tf</em></a> 에는  Vault를  배포할  인스턴스에  대해  정의한다. 이  환경에서 우리는  Ubuntu 이미지를  사용하며  보안  강화를  위해  랜덤한  비밀번호를  생성하여  접속할  수  있도록  만들었다.</p>
 <p><img src="https://user-images.githubusercontent.com/34003729/132978846-09ced3a1-39c9-4292-bfaa-ad0917fb4ddf.png" alt="image"></p>
 <p><em>ecs_vault.tf</em> 파일안의  user_data 부분을  확인해보면  Vault 배포를  위한  Initial Script가  적용되어  있음을  확인할  수  있다.</p>
 <p><img src="https://user-images.githubusercontent.com/34003729/132978894-8c5dea5e-711d-4ab0-80f9-9c7410a8f7a6.png" alt="image"></p>
