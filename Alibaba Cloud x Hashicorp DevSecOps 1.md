@@ -5,7 +5,7 @@
 
 <h1 id="devsecops-series-1-alibaba-cloud의--security-플랫폼과--hashicorp의--terraform-vault-packer로--구현하는-secops">[DevSecOps Series 1] Alibaba Cloud의  Security 플랫폼과  HashiCorp의  Terraform, Vault, Packer로  구현하는 SecOps</h1>
 <blockquote>
-<p>본  데모  블로그는  Alibaba Cloud와  HashiCorp가  함께한  DevSecOps 웨비나를  준비하면서  작성했습니다. 웨비나와  블로그  작성에  도움을  주신  HashiCorp의  GS Lee에게  감사합니다.</p>
+<p>본  데모  블로그는  Alibaba Cloud와  HashiCorp가  함께한  DevSecOps 웨비나를  준비하면서  작성했습니다. 웨비나와  블로그  작성에  도움을  주신  HashiCorp의  GS Lee에게  감사의 말씀을 드립니다.</p>
 </blockquote>
 <blockquote>
 <p>본 블로그는 편의상 높임체를 사용하지 않았습니다.</p>
