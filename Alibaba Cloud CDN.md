@@ -5,12 +5,12 @@
 
 <h1 id="alibaba-cloud-cdn-소개-및-구성-퍼포먼스-튜닝-튜토리얼-타사-cdn과의-퍼포먼스-비교">Alibaba Cloud CDN 소개 및 구성, 퍼포먼스 튜닝 튜토리얼 (타사 CDN과의 퍼포먼스 비교)</h1>
 <h2 id="alibaba-cloud-cdn-소개">1. Alibaba Cloud CDN 소개</h2>
-<h4 id="intro">Intro</h4>
+<h3 id="intro">1.1 Intro</h3>
 <p>Alibaba Cloud CDN은  전  세계적으로  분산된  엣지  노드로  구성된  가상  네트워크입니다.</p>
 <p>이  서비스를  사용하여  다양한  지역, 시나리오의  웹  사이트에  대한  콘텐츠  전달을  가속화할  수  있습니다.</p>
 <p>Alibaba Cloud CDN은  전  세계적으로  분산된 <strong>2,800개  이상의  에지  노드</strong>를  제공합니다. 이  중 2,300개  이상의  노드가  중국  본토의 31개  성  지역에  분포되어  있으며 500개  이상의  노드가  홍콩(중국), 마카오(중국), 대만(중국)을  포함한 70개  이상의  국가  및  지역에  분포되어  있습니다. 또한  이  서비스의  <strong>대역폭  총량은  최대 150Tbit/s</strong>에  달합니다.</p>
 <p>Alibaba Cloud CDN은  오리진  서버에서  전  세계적으로  분산된  엣지  노드로  리소스를  캐시합니다. 사용자는  오리진  서버  대신  가장  가까운  엣지  노드에서  리소스를  검색할  수  있습니다. 이  메커니즘으로  콘텐츠  전달을  가속화하고  오리진  서버의  로드를  줄일  수  있습니다.</p>
-<h4 id="장점">장점</h4>
+<h3 id="장점">1.2 장점</h3>
 <p>Alibaba Cloud CDN서비스를  이용하여  Static, Dynamic 콘텐츠를  모두  가속화  할  수  있습니다. 또한  Alibaba Cloud CDN은  아래  같은  많은  장점을  지니고  있습니다.</p>
 <ul>
 <li><strong>광범위하게  분산된  노드</strong>: Alibaba Cloud CDN은  클라이언트와  동일한  인터넷  서비스  공급자(ISP)에  속하는  가장  가까운  노드로  요청을  리디렉션합니다. 이  메커니즘으로  장거리  콘텐츠  전송을  가속화하고 ISP 간  콘텐츠  전송을  위한  네트워크  대기  시간을  줄일  수  있습니다.</li>
@@ -21,7 +21,7 @@
 <li><strong>고대역폭  용량</strong>: Alibaba Cloud CDN서비스로  최대  150Tbit/s의  대역폭을  활용할  수  있습니다.</li>
 <li><strong>표준화된 API</strong>: Alibaba Cloud CDN API를  이용하여  외부  시스템과의  쉬운  연결을  지원합니다.</li>
 </ul>
-<h4 id="cdn-dcdn-서비스--비교">CDN, DCDN 서비스  비교</h4>
+<h3 id="cdn-dcdn-서비스--비교">1.3 CDN, DCDN 서비스  비교</h3>
 <p><strong>CDN</strong> : Static  콘텐츠의  전달을  가속화하고  Dynamic  콘텐츠에  대한  요청을  오리진  서버로  리디렉션합니다. Alibaba Cloud CDN은  높은  대역폭이  필요하고  많은  양의  네트워크  트래픽을  처리해야  하는  시나리오에  적합합니다.</p>
 <ul>
 <li>Cache expiration  규칙에  따라  콘텐츠를  캐시할  수  있는 2,800개  이상의  엣지  노드를  제공합니다.</li>
@@ -70,6 +70,7 @@
 <li>설정된 Domain name이  정상적으로  가속화  되는지  확인</li>
 <li>Domain을  위한 CNAME 추가</li>
 </ol>
+<p><em>이 절차대로 Alibaba Cloud CDN 설정하는 방법을 아래 가이드에서 참조할 수 있습니다.</em></p>
 <h3 id="가입한-international-계정에-cdn-activate-설정">4.1 가입한 International 계정에 CDN Activate 설정</h3>
 <p><img src="https://user-images.githubusercontent.com/34003729/140640369-1f97dfe2-a8aa-4d4b-b648-4d4107129926.png" alt="image"></p>
 <ul>
@@ -82,16 +83,21 @@
 <h3 id="cdn-콘솔--접속">4.2 CDN 콘솔  접속</h3>
 <p><img src="https://user-images.githubusercontent.com/34003729/140640402-a518f570-b480-4466-8b51-1aef7d181028.png" alt="image"></p>
 <ul>
-<li>콘솔에  정상적으로  접근이  되는지  확인  후  좌측  패널의 Domain Name 클릭</li>
+<li>콘솔에  정상적으로  접근이  되는지  확인  후  좌측  패널의 <em>Domain Name</em> 클릭</li>
 </ul>
 <h3 id="테스트할-domain-name-추가">4.3 테스트할 Domain Name 추가</h3>
 <p><img src="https://user-images.githubusercontent.com/34003729/140640419-94c1e65f-9655-4133-9faa-c1b888ea69aa.png" alt="image"></p>
 <ul>
-<li>Domain Names 화면에서 <em>Add Domain Name</em> 클릭</li>
+<li><em>Domain Names</em> 화면에서 <em>Add Domain Name</em> 클릭</li>
 </ul>
 <p><img src="https://user-images.githubusercontent.com/34003729/140640469-90ebe327-689c-4ffd-8d3e-62f3da00f1d7.png" alt="image"></p>
 <ul>
-<li><strong>Domain Name to Accelerate</strong> : 테스트할 Domain Name을  입력합니다. 이  곳에는 Subdomain이나 wildcard domain을  사용할  수  있습니다.  (Wildcard Entry를  사용하실  경우  몇가지  추가  설정이  필요합니다. 해당  내용은  링크에서  확인하실  수  있습니다. <a href="https://www.alibabacloud.com/help/doc-detail/40103.htm?spm=a2c63.p38356.879954.9.2a8763ee2EaylY#trouble-1779952">https://www.alibabacloud.com/help/doc-detail/40103.htm?spm=a2c63.p38356.879954.9.2a8763ee2EaylY#trouble-1779952</a></li>
+<li><strong>Domain Name to Accelerate</strong> : 테스트할 Domain Name을  입력합니다. 이  곳에는 Subdomain이나 wildcard domain을  사용할  수  있습니다.</li>
+</ul>
+<blockquote>
+<p>Wildcard Entry를  사용하실  경우  몇가지  추가  설정이  필요합니다. 해당  내용은  링크에서  확인하실  수  있습니다. <a href="https://www.alibabacloud.com/help/doc-detail/40103.htm?spm=a2c63.p38356.879954.9.2a8763ee2EaylY#trouble-1779952">https://www.alibabacloud.com/help/doc-detail/40103.htm?spm=a2c63.p38356.879954.9.2a8763ee2EaylY#trouble-1779952</a></p>
+</blockquote>
+<ul>
 <li><strong>Business Type</strong> : CDN으로  기본적으로  수행할  작업  타입을  설정합니다.
 <ul>
 <li><em>Image and small file distribution :</em> 작은  사이즈의  정적  컨텐츠를  가속화할  때  사용</li>
@@ -141,8 +147,8 @@
 <li><strong>Intelligent Compression</strong> : Gzip을  사용하여  정적  파일  컨텐츠를  압축 / 파일의  사이즈  축소</li>
 </ul>
 <h3 id="cdn에--설정된-domain-name-확인">4.7 CDN에  설정된 Domain Name 확인</h3>
-<p>CDN 설정  이후  가속화된  URL인  CNAME을  확인할  수  있습니다. 이  CNAME을  다음  단계인  DNS 설정을  위해  Note합니다.<br>
-<em>Domain Names &gt; copy the CNAME</em><br>
+<p>CDN 설정  이후  가속화된  URL인  CNAME을  확인할  수  있습니다. 이  CNAME을  다음  단계인  DNS 설정을  위해  Note합니다.</p>
+<p><em>Domain Names &gt; copy the CNAME</em><br>
 <img src="https://user-images.githubusercontent.com/34003729/140640880-b6c9c956-9313-4294-84c2-732b44bbd6de.png" alt="image"></p>
 <blockquote>
 <p>참조 : <a href="https://www.alibabacloud.com/help/doc-detail/208994.htm?spm=a2c63.p38356.b99.31.3c094c08NWGrFd">https://www.alibabacloud.com/help/doc-detail/208994.htm?spm=a2c63.p38356.b99.31.3c094c08NWGrFd</a></p>
@@ -177,9 +183,9 @@
 <img src="https://user-images.githubusercontent.com/34003729/140641073-ad765ce5-ddd1-4f77-a236-b8c19bf56b32.png" alt="image"></p>
 <p><em>Alibaba Cloud CDN Console &gt; Domain Names &gt; Manage &gt; Cache &gt; Cache Expiration &gt; Cache Rule</em> -  <strong>Expire in</strong> : 31536000s</p>
 <h3 id="url-parameter-삭제--설정">5.2 URL Parameter 삭제  설정</h3>
-<p>접속할  URL에 Parameter나 cache key를  제거/유지하여Hit rate와 back-to-origin에  대한  트래픽을  줄이기  위한  설정입니다.</p>
+<p>접속할  URL에 Parameter나 cache key를  제거/유지하여 Hit rate와 back-to-origin에  대한  트래픽을  줄이기  위한  설정입니다.</p>
 <ul>
-<li><em>Alibaba Cloud CDN Console &gt; Domain Names &gt; Manage &gt; Optimization &gt; Parameter Filtering (Delete Specified Parameters) &gt; Modify 선택</em>  후  아래  붉은색  가이드에  따라  설정</li>
+<li><em>Alibaba Cloud CDN Console &gt; Domain Names &gt; Manage &gt; Optimization &gt; Parameter Filtering (Delete/Retain Specified Parameters) &gt; Modify 선택</em>  후  아래  붉은색  가이드에  따라  설정</li>
 </ul>
 <p><img src="https://user-images.githubusercontent.com/34003729/140641135-35234eeb-aabf-498d-9a0c-e7e7db8feb1a.png" alt="image"></p>
 <blockquote>
@@ -194,16 +200,24 @@
 <img src="https://user-images.githubusercontent.com/34003729/140641175-48a267c2-b3fc-4be7-847e-d109d1f6ec3c.png" alt="image"></p>
 <h3 id="brotli-compression">5.4 Brotli compression</h3>
 <p><a href="https://en.wikipedia.org/wiki/Brotli">Brotli</a>는  오픈  소스  압축  알고리즘입니다. Brotli 압축  기능을  활성화하면  텍스트  파일이  사용자에게  반환되기  전에 Brotli 파일로  압축됩니다. 이렇게  하면  파일  크기가  줄어들고  콘텐츠  전달이  빨라지며  대역폭  사용량이  줄어듭니다.</p>
+<blockquote>
+<p>Brotli는 무손실 압축기법으로 LZ77 알고리즘의 최신 변형 조합입니다. Gzip과 비교되는 압축기법의 하나로 장점은 Dictionary를 사용해서 전체 키워드가 아닌 키만 전송합니다. 일반적으로 gzip보다 압축률이 높습니다.</p>
+</blockquote>
 <p><em>Alibaba Cloud DNS 콘솔  &gt; Domain Names &gt; Domain 선택  &gt; Optimization &gt; Brotli Compression True 선택</em><br>
 <img src="https://user-images.githubusercontent.com/34003729/140641230-621bb650-b24a-4b53-89c6-8cc348c2c3d5.png" alt="image"></p>
 <p><strong>그  밖에  Image editing, SSD priority 설정, protocol stack 최적화  등의  튜닝  작업을  진행할  수  있습니다.</strong></p>
 <h2 id="alibaba-cloud-cdn-테스트--결과">6. Alibaba Cloud CDN 테스트  결과</h2>
-<p>약 <strong>450K, 2.7M 크기의 2개의  이미지</strong>를 <strong>Alibaba Cloud CDN(Green), A CSP CDN(Red), B vendor(Blue) 3개의  존</strong>에  올려두고 cacti 를  통해  CDN 퍼포먼스  테스트를  진행했습니다.</p>
+<p>Alibaba Cloud CDN의 성능을 타사의 CDN과 바교하기 위하여 약 <strong>450K, 2.7M 크기의 2개의  이미지</strong>를 <strong>Alibaba Cloud CDN(Green), A CSP CDN(Red), B vendor(Blue) 3개의  존</strong>에  올려두고 cacti 를  통해  CDN 퍼포먼스  테스트를  진행했습니다.</p>
 <blockquote>
-<p>튜닝은  기본  TTL 설정만  적용한  값입니다.<br>
-<img src="https://user-images.githubusercontent.com/34003729/140641270-1e70a8b6-8837-4fb4-ab69-52f91c0078aa.png" alt="image"></p>
+<p>튜닝은  기본  TTL 설정만  적용한  값입니다.</p>
 </blockquote>
-<p><strong>B vendor의  CDN</strong>은  Connection_time과  Delivery_time에서  매우  느린  수치를  확인할  수  있으며  <strong>A CSP의  CDN과  Alibaba Cloud CDN</strong>은  두  metric에서  매우  빠른 수치를  기록했습니다. 또한  용량이  작은  이미지에서는  타  벤더의  CDN보다  안정적인  퍼포먼스를  제공했다는  것을  확인할  수  있습니다.</p>
+<p><img src="https://user-images.githubusercontent.com/34003729/140641270-1e70a8b6-8837-4fb4-ab69-52f91c0078aa.png" alt="image"></p>
+<p>B vendor의  CDN은  Connection_time과  Delivery_time에서  매우  느린  수치를  확인할  수  있으며  A CSP의  CDN,  Alibaba Cloud CDN은  두  metric에서  매우  빠른 수치를  기록했습니다.<br>
+또한  용량이  작은  이미지에서는  타  벤더의  CDN보다  Alibaba Cloud CDN이 안정적인  퍼포먼스를  제공했다는  것을  확인할  수  있습니다.</p>
+<ul>
+<li>Connection/Delivery Time : <strong>Alibaba Cloud CDN</strong>, A CSP CDN &gt; B Local vendor</li>
+<li>안정성(jitter 유무) : <strong>Alibaba Cloud CDN</strong> &gt; A CSP CDN, B Local vendor</li>
+</ul>
 <blockquote>
 <p>Compression, Parameter 튜닝을  진행하면  더  빠른  퍼포먼스를  기록할  수  있으나  테스트의  공정성  관점에서  기본  Cache TTL 설정만  진행했습니다.</p>
 </blockquote>
