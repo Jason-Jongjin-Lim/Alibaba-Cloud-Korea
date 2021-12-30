@@ -3,7 +3,7 @@
 
 ---
 
-<h1 id="alibaba-cloud-isv-on-cloud-architecture">Alibaba Cloud ISV on Cloud Architecture**</h1>
+<h1 id="alibaba-cloud-isv-on-cloud-architecture">Alibaba Cloud ISV on Cloud Architecture</h1>
 <h2 id="isv-소개-saas">ISV 소개 (SaaS)</h2>
 <p>ISV라는 것은 온프레미스에 구성해놓은 솔루션을 클라우드로 이전하여 판매 채널을 늘리는 것을 의미합니다. 즉, ISV on Cloud라고 하는 것은 SaaS를 만드는 행위와 같습니다.</p>
 <p>SaaS(Software as a Service)는 기존의 솔루션 판매 방식인 All-in-one 라이선스 판매 방식이 아닌,구독 기반으로 라이선스가 부여되고 중앙에서 호스팅됩니다. 이 형태는 ERP 및 메시징 소프트웨어, 관리 소프트웨어, 가상화 등을 포함한 많은 비즈니스 애플리케이션의 제공 모델이 될 수 있습니다.</p>
