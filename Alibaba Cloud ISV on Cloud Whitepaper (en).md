@@ -185,7 +185,7 @@
 <p>If it is a service that provides web-based SaaS, it is necessary to configure the HTTPS protocol. HTTPS protocol must be managed by SSL Certificate. You can use Alibaba Cloud’s SSL Certification service to manage these SSL certificates.</p>
 <p>d. RAM</p>
 <p>RAM allows you to create and manage accounts and grant different privileges to a single account or group. In this way, you can grant different identities access to different Alibaba Cloud resources. This service allows us to perform RBAC-based user account and service management.</p>
-<h2 id="conclusion">conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 <p>So far, we have looked at the services and architecture of Alibaba Cloud that can help you in the process of creating a legacy application ISV on Cloud, i.e. configuring SaaS.</p>
 <p>These services enable us to transform our business cost-effectively, quickly and safely when migrating our applications to the cloud.</p>
 <p>If you have any questions about this architecture or would like consulting, please send an e-mail to <a href="mailto:cloudkorea@list.alibaba-inc.com">cloudkorea@list.alibaba-inc.com</a>.</p>
