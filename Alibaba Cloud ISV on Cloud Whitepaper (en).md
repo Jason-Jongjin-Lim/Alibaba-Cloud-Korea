@@ -180,7 +180,7 @@
 <p>When our applications are moved to the cloud, the first security consideration to consider is network-related security enhancements.</p>
 <p>Anti-DDoS, Alibaba Cloud’s network security service, effectively defends against DDoS attacks from around the world. In addition, security attacks at the application layer can be defended using bots in WAF, and attacks at the network layer can be defended using Cloud Firewall. We can use these 3 services to keep our SaaS safe.</p>
 <p>b. Security Center</p>
-<p>Security Center는 보안 위협을 동적으로 식별 및 분석하고 위협이 감지되면 경고를 생성하는 중앙 집중식 보안 관리 시스템입니다. Security Center는 데이터 센터의 클라우드 리소스 및 서버 보안을 보장하기 위해 여러 기능을 제공합니다. 기능에는 랜섬웨어 방지, 바이러스 백신, 웹 변조 방지, 컨테이너 이미지 스캔 및 규정 준수 검사가 포함됩니다. 이를 통해 보안 운영, 대응 및 위협 추적을 자동화하고 규정 준수 요구 사항을 충족할 수 있습니다.</p>
+<p>Security Center is a centralized security management system that dynamically identifies and analyzes security threats and generates alerts when threats are detected. Security Center provides several features to ensure the security of cloud resources and servers in your data center. Features include ransomware protection, antivirus, web tamper protection, container image scanning and compliance scanning. This enables you to automate security operations, response and threat tracking, and meet compliance requirements.</p>
 <p>c. SSL Certification</p>
 <p>If it is a service that provides web-based SaaS, it is necessary to configure the HTTPS protocol. HTTPS protocol must be managed by SSL Certificate. You can use Alibaba Cloud’s SSL Certification service to manage these SSL certificates.</p>
 <p>d. RAM</p>
